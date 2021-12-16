@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'underscore';
-import { list_products } from 'src/app/data';
+import { ListePlantesService } from 'src/app/services/liste-plantes.service';
 
 @Component({
     selector: 'app-page-accueil',
@@ -10,18 +10,20 @@ import { list_products } from 'src/app/data';
 export class PageAccueilComponent implements OnInit {
     public filterCat!: string[];
 
-    constructor() {
+    constructor(private listPlantes: ListePlantesService) {
         this.filterCat = [];
     }
 
     ngOnInit(): void {
-        this.filterCat = this.extractCategories();
+        this.extractCategories();
     }
 
-    extractCategories(): string[] {
-        const categories = list_products.map(
-            (value) => value['product_breadcrumb_label']
-        );
-        return _.uniq(categories);
+    extractCategories() {
+        this.listPlantes.getListePlantes().subscribe((result: any) => {
+            const tmp = result.map(
+                (value: any) => value['product_breadcrumb_label']
+            );
+            this.filterCat = _.uniq(tmp);
+        });
     }
 }
