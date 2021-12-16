@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { FilterSideBarComponent } from './components/filter-side-bar/filter-side-bar.component';
 import { CardPlanteComponent } from './components/card-plante/card-plante.component';
 import { HttpClientModule } from '@angular/common/http';
+import { IconComponent } from './components/icon/icon.component';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
         PageNotFoundComponent,
         FilterSideBarComponent,
         CardPlanteComponent,
+        IconComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule],
     providers: [],
