@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-card-plante',
-  templateUrl: './card-plante.component.html',
-  styleUrls: ['./card-plante.component.scss']
+    selector: 'app-card-plante',
+    templateUrl: './card-plante.component.html',
+    styleUrls: ['./card-plante.component.scss'],
 })
 export class CardPlanteComponent implements OnInit {
+    @Input() detailsPlante: any;
 
-  constructor() { }
+    constructor() {}
 
-  ngOnInit(): void {
-  }
-
+    ngOnInit(): void {}
 }

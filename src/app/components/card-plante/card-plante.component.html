@@ -1,11 +1,16 @@
-<div class="plant" style="width: 18rem">
-    <img src="..." class="card-img-top" alt="..." />
+<div class="plant card mb-4" style="width: 18rem">
+    <img
+        src="{{ detailsPlante.product_image_source }}"
+        class="card-img-top"
+        alt="{{ detailsPlante.product_name }}"
+    />
     <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">{{ detailsPlante.product_name }}</h5>
+        <div class="d-flex flex-row align-items-end justify-content-between">
+            <p class="card-content">
+                {{ detailsPlante.product_unitprice_ati }} €
+            </p>
+            <a href="#" class="btn btn-success">Pour moi !</a>
+        </div>
     </div>
 </div>

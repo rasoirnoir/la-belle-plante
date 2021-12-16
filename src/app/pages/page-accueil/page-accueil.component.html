@@ -16,7 +16,11 @@
             </button>
             <button class="btn btn-outline-success btn-sm me-2">Avis</button>
         </div>
-
-        <app-card-plante></app-card-plante>
+        <div class="row">
+            <div class="col" *ngFor="let plante of listeProducts">
+                <app-card-plante [detailsPlante]="plante"></app-card-plante>
+            </div>
+        </div>
+        <div class="d-flex flex-row flex-wrap justify-content-between"></div>
     </div>
 </div>
